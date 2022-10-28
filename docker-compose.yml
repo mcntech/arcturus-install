@@ -33,7 +33,7 @@ services:
     image: mcntech/arcturus
     environment:
       - CONTRACT=0x00000005Ff125830A53F5e6F53A37854C250f315
-      - RPC=""
+      - RPC=https://polygon-rpc.com
     ports:
       - '8188:8188'
     restart: on-failure
