@@ -19,7 +19,7 @@ services:
   test-echo-server:
     image: mcntech/test-srv-echo
     ports:
-      - '8080:8080'
+      - '9430:8080'
 
   arcturus:
     image: mcntech/arcturus
