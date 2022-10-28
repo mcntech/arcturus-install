@@ -11,15 +11,23 @@ services:
       - '8443:8443'
       - '8001:8001'
       - '8444:8444'
+    volumes:
+      -  ./kong.yml:/opt/config/kong.yml
     restart: on-failure
 
   redis:
     image: redis
 
-  test-echo-server:
+  test-echo-server1:
     image: mcntech/test-srv-echo
+    profiles: ["test"]
     ports:
       - '9430:8080'
+  test-echo-server2:
+    image: mcntech/test-srv-echo
+    profiles: ["test"]
+    ports:
+      - '9428:8080'
 
   arcturus:
     image: mcntech/arcturus
@@ -29,10 +37,6 @@ services:
     ports:
       - '8188:8188'
     restart: on-failure
-
-volumes:
-  shared-volume:
-    
 
 networks:
   default:
