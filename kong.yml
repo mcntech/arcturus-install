@@ -1,0 +1,22 @@
+_format_version: '2.1'
+services:
+- name: test-service1
+  url: http://192.168.0.160:9430
+  routes:
+  - name: test-route1
+    paths:
+    - '/service1'
+  plugins:
+  - name: arcturus_plugin
+    config:
+      authurl: http://192.168.0.160:8188  
+- name: test-service2
+  url: http://192.168.0.160:9428
+  routes:
+  - name: test-route2
+    paths:
+    - '/service2'
+  plugins:
+  - name: arcturus_plugin
+    config:
+      authurl: http://192.168.0.160:8188  
